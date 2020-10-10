@@ -8,6 +8,8 @@
   --hero-color: #ffffff;
   --hero-background: #2f303a;
   --team-background: #f5f4fa;
+  --svg-color: #afb1b8;
+
   --link-footer-color: rgba(255, 255, 255, 0.6);
 }
 
@@ -141,11 +143,11 @@ img {
   color: var(--logo-color);
 }
 
-.nav-list-item .link {
+.nav-list-item .contact-link {
   margin-right: 50px;
 }
 
-.nav-link .link {
+.nav-link .contact-link {
   display: flex;
   align-items: center;
   font-weight: 500;
@@ -156,26 +158,26 @@ img {
 
   color: var(--link-color);
 }
-.nav-link .link:hover,
-.nav-link .link:focus {
-  color: var(--accent-color);
-}
 
 .nav-list-link {
   display: flex;
   align-items: center;
 }
+
 .contact-svg {
-  width: 16px;
-  height: 12px;
-  margin-right: 20px;
+  margin-right: 10px;
+  fill: var(--svg-color);
 }
 
-.nav-list-link:hover,
-.nav-list-link:focus {
-  --color1: #2196f3;
+.contact-link:hover,
+.contact-link:focus {
+  color: var(--accent-color);
 }
 
+.contact-link:hover svg,
+.contact-link:focus svg {
+  fill: var(--accent-color);
+}
 /*=============== HERO ===================*/
 
 .hero {
@@ -184,11 +186,15 @@ img {
   text-align: center;
 
   background: var(--hero-background);
-  background-image: url(/images/background/background.jpg);
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/background/background.jpg);
+
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
-  box-shadow: 50%;
 }
 
 .hero .container {
@@ -234,12 +240,13 @@ img {
   display: flex;
 }
 
-.advantages-list-item svg {
+.advantages-svg {
   width: 270px;
   height: 120px;
   margin-bottom: 30px;
   padding: 25px 100px;
-  background: #f5f4fa;
+
+  background: var(--team-background);
   border-radius: 4px;
 }
 
@@ -258,6 +265,7 @@ img {
 
   color: var(--title-color);
 }
+
 .advantages-description {
   font-weight: 400;
   font-size: 14px;
@@ -356,7 +364,7 @@ img {
 }
 
 .team-member-info {
-  padding: 28px 59px;
+  padding: 28px 30px;
 }
 
 .team-member-name {
@@ -389,9 +397,7 @@ img {
 
 .social-links-list {
   display: flex;
-  padding-right: 32px;
-  padding-left: 32px;
-  padding-bottom: 30px;
+  margin-top: 16px;
   justify-content: space-between;
 }
 
@@ -443,14 +449,13 @@ img {
   display: flex;
   width: 170px;
   height: 90px;
-  --color1: #afb1b8;
-  padding-left: 60px;
+  --color1: var(--svg-color);
   padding-top: 22px;
   justify-content: center;
 }
 
 .client-link-item:hover svg {
-  --color1: #2196f3;
+  --color1: var(--accent-color);
 }
 
 .clients-list-logo {
@@ -458,16 +463,12 @@ img {
   box-sizing: border-box;
   border-radius: 4px;
 
-  color: #afb1b8;
+  color: var(--svg-color);
 }
 
 .clients-list-logo:hover,
 .clients-list-logo:focus {
-  border: 1px solid #2196f3;
-}
-
-.client-link-item:not(:last-child) {
-  margin-right: 30px;
+  border: 1px solid var(--accent-color);
 }
 
 .clients-list {
@@ -593,7 +594,7 @@ img {
   letter-spacing: 0.03em;
   text-transform: uppercase;
 
-  color: #ffffff;
+  color: var(--hero-color);
 }
 
 .footer-contact-list:not(:last-child) {
@@ -628,10 +629,12 @@ img {
 /*============================================== PORTFOLIO ==================================*/
 
 /*============= PORTFOLIO HEADER ================== */
+
 .hero-portfolio {
   padding-top: 94px;
   padding-bottom: 94px;
 }
+
 .heroportfolio-list {
   display: flex;
   flex-wrap: wrap;
@@ -650,7 +653,8 @@ img {
   line-height: 1.625;
   letter-spacing: 0.03em;
   padding: 6px 22px;
-  background: #f5f4fa;
+
+  background: var(--team-background);
   border-radius: 4px;
 }
 
@@ -659,6 +663,7 @@ img {
   background-color: var(--accent-color);
   color: var(--hero-color);
 }
+
 .projects {
   margin: 0px 0px;
   display: flex;
@@ -669,6 +674,7 @@ img {
 .projects-list-item:nth-last-child(-n + 3) {
   margin-bottom: 0px;
 }
+
 .projects-list-item:nth-child(3n) {
   margin-right: 0px;
 }
@@ -679,7 +685,7 @@ img {
   margin-right: 30px;
   margin-bottom: 30px;
 
-  background: #ffffff;
+  background: var(--hero-color);
   border: 1px solid #eeeeee;
   box-sizing: border-box;
 }
